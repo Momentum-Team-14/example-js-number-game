@@ -23,7 +23,7 @@ function gameRound() {
 
 function playGame() {
     let keepPlaying = 'y'
-    while (keepPlaying === 'y') {
+    while (keepPlaying === 'y' || keepPlaying === 'Y') {
         let guessTotal = gameRound()
         // assign the output of the function gameRound to the variable guessTotal
         alert(`You finished the last round in ${guessTotal} guesses!`)
