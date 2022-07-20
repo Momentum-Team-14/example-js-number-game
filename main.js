@@ -5,7 +5,7 @@ function gameRound() {
     //declare the function
     let numberGuess;
     // declare variable
-    let numberThinkingOf = Number(prompt("Enter the  number you are thinking of, must be an integer between 1 and 100."));
+    let numberThinkingOf = Number(prompt("Enter the number you want the player to guess of, must be an integer between 1 and 100."));
     // get input from user, convert to a number, store in variable
     let numberOfGuesses = 0
     // declare variable and assign starting value of 0
