@@ -1,17 +1,34 @@
-// declare variable
-let numberGuess;
-// assign a value to the variable
-numberGuess = Number(prompt("Enter a number between 1 and 100"));
+console.log('JS loaded')
 
-// this is the number that the user will guess
-let numberThinkingOf = 10;
+function gameRound() {
+    let numberGuess;
+    // declare variable
+    let numberThinkingOf = Number(prompt("Enter the  number you are thinking of, must be an integer between 1 and 100."));
+    let numberOfGuesses = 0
 
-// TODO make sure user guess is a number
+    while (numberGuess !== numberThinkingOf) {
+        numberGuess = Number(prompt("Enter a number between 1 and 100"));
+        if (numberGuess > numberThinkingOf) {
+            alert("Too high, guess again");
+            numberOfGuesses++
+        } else if (numberGuess < numberThinkingOf) {
+            alert("Too low, guess again");
+            numberOfGuesses++
+        }
+    }
+    numberOfGuesses++
+    alert("You're right")
+    return numberOfGuesses
+};
 
-if (numberGuess > numberThinkingOf) {
-    alert("Too high, guess again");
-} else if (numberGuess < numberThinkingOf) {
-    alert("Too low, guess again");
-} else {
-    alert("You're right!")
+function playGame() {
+    let keepPlaying = 'y'
+    while (keepPlaying === 'y') {
+        let guessTotal = gameRound()
+        // assign the output of the function gameRound to the variable guessTotal
+        alert(`You finished the last round in ${guessTotal} guesses!`)
+        keepPlaying = prompt('Do you want to play again, y or n?')
+    }
 }
+
+playGame();
